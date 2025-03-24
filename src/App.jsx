@@ -15,6 +15,8 @@ import PrivateRoute from './components/PrivateRoute';
 import ROLES from './config/roles';
 import CateringDashboard from './pages/catering_manager/CateringDashboard';
 import customer_logged_in_home from './pages/customer/Home';
+// import ChefDashboard from './pages/executing_chef/ChefDashboard';
+import ChefDashboard from './pages/excuting_chef/ChefDashboard';
 
 const App = () => {
     return (
@@ -45,6 +47,15 @@ const App = () => {
                                 element={
                                     <PrivateRoute>
                                         <AdminDashboard />
+                                    </PrivateRoute>
+                                }
+                            />
+                            {/* Executing Chef route */}
+                            <Route
+                                path="/chef-dashboard"
+                                element={
+                                    <PrivateRoute>
+                                        <ChefDashboard />
                                     </PrivateRoute>
                                 }
                             />
