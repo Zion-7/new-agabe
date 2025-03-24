@@ -42,23 +42,23 @@ const AdminDashboard = () => {
         e.preventDefault();
         setError('');
 
-        try {
-            const endpoint = formData.role === ROLES.CATERING_MANAGER
-                ? '/api/auth/register/catering-manager'
-                : '/api/auth/register/executive-chef';
+        // try {
+        //     const endpoint = formData.role === ROLES.CATERING_MANAGER
+        //         ? '/api/auth/register/catering-manager'
+        //         : '/api/auth/register/executive-chef';
 
-            await axios.post(`http://localhost:4000${endpoint}`, formData);
-            setFormData({
-                name: '',
-                email: '',
-                phone: '',
-                password: '',
-                role: ROLES.CATERING_MANAGER
-            });
-            fetchUsers();
-        } catch (err) {
-            setError(err.response?.data?.message || 'Failed to create user');
-        }
+        //     await axios.post(`http://localhost:4000${endpoint}`, formData);
+        //     setFormData({
+        //         name: '',
+        //         email: '',
+        //         phone: '',
+        //         password: '',
+        //         role: ROLES.CATERING_MANAGER
+        //     });
+        //     fetchUsers();
+        // } catch (err) {
+        //     setError(err.response?.data?.message || 'Failed to create user');
+        // }
     };
 
     if (loading) {
