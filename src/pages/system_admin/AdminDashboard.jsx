@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useAuth } from '../context/AuthContext';
-import ROLES from '../config/roles';
+import { useAuth } from '../../context/AuthContext';
+import ROLES from '../../config/roles';
 
 const AdminDashboard = () => {
     const [users, setUsers] = useState([]);

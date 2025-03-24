@@ -9,7 +9,7 @@ import Menu from './pages/customer/Menu';
 import Cart from './pages/customer/Cart';
 import Orders from './pages/customer/Orders';
 import Dashboard from './pages/Dashboard';
-import AdminDashboard from './pages/AdminDashboard';
+import AdminDashboard from './pages/system_admin/AdminDashboard';
 import AdminRoute from './components/AdminRoute';
 import PrivateRoute from './components/PrivateRoute';
 import ROLES from './config/roles';
@@ -36,6 +36,15 @@ const App = () => {
                                 element={
                                     <PrivateRoute>
                                         <CateringDashboard />
+                                    </PrivateRoute>
+                                }
+                            />
+                            {/* system admin route */}
+                            <Route
+                                path="/admin-dashboard"
+                                element={
+                                    <PrivateRoute>
+                                        <AdminDashboard />
                                     </PrivateRoute>
                                 }
                             />
