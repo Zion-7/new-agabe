@@ -154,7 +154,7 @@ const Login = () => {
             } else if (role === 'Catering Manager') {
                 navigate('/catering-dashboard');
             } else {
-                navigate('/customer-dashboard');
+                navigate('/customer');
             }
         } catch (err) {
             console.error('Login error:', err);

@@ -14,6 +14,8 @@ import AdminRoute from './components/AdminRoute';
 import PrivateRoute from './components/PrivateRoute';
 import ROLES from './config/roles';
 import CateringDashboard from './pages/catering_manager/CateringDashboard';
+import customer_logged_in_home from './pages/customer/Home';
+
 const App = () => {
     return (
         <AuthProvider>
@@ -37,7 +39,15 @@ const App = () => {
                                     </PrivateRoute>
                                 }
                             />
-
+                            {/* Customer route */}
+                            <Route
+                                path="/customer"
+                                element={
+                                    <PrivateRoute>
+                                        <customer_logged_in_home />
+                                    </PrivateRoute>
+                                }
+                            />
                             {/* Protected Routes */}
                             <Route
                                 path="/cart"
