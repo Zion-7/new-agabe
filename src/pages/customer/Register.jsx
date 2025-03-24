@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext';
-import ROLES from '../config/roles';
+import { useAuth } from '../../context/AuthContext';
+import ROLES from '../../config/roles';
 
 const Register = () => {
     const navigate = useNavigate();

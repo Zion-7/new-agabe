@@ -4,16 +4,16 @@ import { AuthProvider } from './context/AuthContext';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Login from './pages/Login';
-import Register from './pages/Register';
-import Menu from './pages/Menu';
-import Cart from './pages/Cart';
-import Orders from './pages/Orders';
+import Register from './pages/customer/Register';
+import Menu from './pages/customer/Menu';
+import Cart from './pages/customer/Cart';
+import Orders from './pages/customer/Orders';
 import Dashboard from './pages/Dashboard';
 import AdminDashboard from './pages/AdminDashboard';
 import AdminRoute from './components/AdminRoute';
 import PrivateRoute from './components/PrivateRoute';
 import ROLES from './config/roles';
-
+import CateringDashboard from './pages/catering_manager/CateringDashboard';
 const App = () => {
     return (
         <AuthProvider>
@@ -26,6 +26,17 @@ const App = () => {
                             <Route path="/login" element={<Login />} />
                             <Route path="/register" element={<Register />} />
                             <Route path="/menu" element={<Menu />} />
+
+
+                            {/* Catering manager route */}
+                            <Route
+                                path="/catering-dashboard"
+                                element={
+                                    <PrivateRoute>
+                                        <CateringDashboard />
+                                    </PrivateRoute>
+                                }
+                            />
 
                             {/* Protected Routes */}
                             <Route
